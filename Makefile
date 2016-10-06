@@ -6,7 +6,7 @@
 #    By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2016/04/28 13:19:17 by lherbelo          #+#    #+#              #
-#*   Updated: 2016/07/24 16:20:22 by lherbelo         ###   ########.fr       *#
+#*   Updated: 2016/10/06 10:01:33 by lherbelo         ###   ########.fr       *#
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,7 +29,6 @@ LIBS = -L./libft/ -lft
 OBJ_NAME = $(SRC_NAME:.c=.o)
 SRC = $(addprefix $(SRC_DIR)/, $(SRC_NAME))
 OBJ = $(addprefix $(OBJ_DIR)/, $(OBJ_NAME))
-#INC = $(addprefix $(INC_DIR)/, $(INC_NAME))
 
 #DIV
 
@@ -44,8 +43,8 @@ all: $(NAME)
 $(NAME): makeo makec
 
 makeo:
-#	make -C ./libft/
-#	make -C ./minilibx/
+	make -C ./libft/
+	make -C ./minilibx/
 	mkdir -p $(OBJ_DIR)
 	$(CC) $(F_42) $(INC) -c $(SRC)
 	mv $(SRC_NAME:.c=.o) $(OBJ_DIR)
@@ -58,8 +57,8 @@ clean:
 
 fclean: clean
 	rm -rf $(NAME)
-#	make fclean -C ./libft/
-#	make clean -C ./minilibx/
+	make fclean -C ./libft/
+	make clean -C ./minilibx/
 
 re: fclean all
 
