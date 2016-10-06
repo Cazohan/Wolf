@@ -6,7 +6,7 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/24 15:20:00 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/08/09 16:28:31 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/06 10:08:37 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,39 +33,39 @@ typedef struct		s_wolf
 	int				x;
 	int				y;
 	int				**map;
-	int				mapX;
-	int				mapY;
-	int				stepX;
-	int				stepY;
+	int				mapx;
+	int				mapy;
+	int				stepx;
+	int				stepy;
 	int				hit;
 	int				side;
-	int				lineH;
-	int				drawS;
-	int				drawE;
+	int				lineh;
+	int				draws;
+	int				drawe;
 	int				up;
 	int				down;
 	int				right;
 	int				left;
-	double			posX;
-	double			posY;
-	double			dirX;
-	double			dirY;
-	double			planeX;
-	double			planeY;
+	double			posx;
+	double			posy;
+	double			dirx;
+	double			diry;
+	double			planex;
+	double			planey;
 	double			time;
 	double			otime;
 	double			frame;
-	double			camX;
-	double			rayposX;
-	double			rayposY;
-	double			raydirX;
-	double			raydirY;
+	double			camx;
+	double			rayposx;
+	double			rayposy;
+	double			raydirx;
+	double			raydiry;
 	double			width;
-	double			s_distX;
-	double			s_distY;
-	double			d_distX;
-	double			d_distY;
-	double			ppwallD;
+	double			s_distx;
+	double			s_disty;
+	double			d_distx;
+	double			d_disty;
+	double			ppwalld;
 	double			rot_speed;
 	double			move_speed;
 }					t_wolf;

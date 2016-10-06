@@ -6,7 +6,7 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/08 19:00:26 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/08/17 11:48:43 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/06 10:09:00 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,19 @@ void		ft_column(t_mlx *m, int x)
 
 	y = 0;
 	select_color(&c, 0, 0, 0);
-	while (y < m->w->drawS)
+	while (y < m->w->draws)
 	{
 		pixel_put(m, x, y, &c);
 		y++;
 	}
-	y = m->w->drawS;
+	y = m->w->draws;
 	select_color(&c, 250, 0, 0);
-	while (y < m->w->drawE)
+	while (y < m->w->drawe)
 	{
 		pixel_put(m, x, y, &c);
 		y++;
 	}
-	y = m->w->drawE;
+	y = m->w->drawe;
 	select_color(&c, 175, 175, 175);
 	while (y < m->height)
 	{

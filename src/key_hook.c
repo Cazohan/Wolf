@@ -6,7 +6,7 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/09 16:25:13 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/08/09 16:27:15 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/06 10:11:25 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,28 +19,28 @@ static void		ft_turn(t_mlx *m, int dir)
 	int			coef;
 
 	coef = 1;
-	tmpdir = m->w->dirX;
-	tmpplane = m->w->planeX;
+	tmpdir = m->w->dirx;
+	tmpplane = m->w->planex;
 	if (dir == 1)
 		coef = -1;
-	m->w->dirX = m->w->dirX * cos(coef * m->w->rot_speed)
-									- m->w->dirY * sin(coef * m->w->rot_speed);
-	m->w->dirY = tmpdir * sin(coef * m->w->rot_speed)
-									+ m->w->dirY * cos(coef * m->w->rot_speed);
-	m->w->planeX = m->w->planeX * cos(coef * m->w->rot_speed)
-								- m->w->planeY * sin(coef * m->w->rot_speed);
-	m->w->planeY = tmpplane * sin(coef * m->w->rot_speed)
-								+ m->w->planeY * cos(coef * m->w->rot_speed);
+	m->w->dirx = m->w->dirx * cos(coef * m->w->rot_speed)
+									- m->w->diry * sin(coef * m->w->rot_speed);
+	m->w->diry = tmpdir * sin(coef * m->w->rot_speed)
+									+ m->w->diry * cos(coef * m->w->rot_speed);
+	m->w->planex = m->w->planex * cos(coef * m->w->rot_speed)
+								- m->w->planey * sin(coef * m->w->rot_speed);
+	m->w->planey = tmpplane * sin(coef * m->w->rot_speed)
+								+ m->w->planey * cos(coef * m->w->rot_speed);
 }
 
 void		ft_move(t_mlx *m)
 {
 	if (m->w->up)
 	{
-		if (!(m->w->map[(int)(m->w->posX + m->w->dirX)][(int)m->w->posY]))
-			m->w->posX += m->w->dirX * m->w->move_speed;
-		if (!(m->w->map[(int)m->w->posX][(int)(m->w->posY + m->w->dirY)]))
-			m->w->posY += m->w->dirY * m->w->move_speed;
+		if (!(m->w->map[(int)(m->w->posx + m->w->dirx)][(int)m->w->posy]))
+			m->w->posx += m->w->dirx * m->w->move_speed;
+		if (!(m->w->map[(int)m->w->posx][(int)(m->w->posy + m->w->diry)]))
+			m->w->posy += m->w->diry * m->w->move_speed;
 	}
 	if (m->w->left)
 		ft_turn(m, 0);
@@ -48,10 +48,10 @@ void		ft_move(t_mlx *m)
 		ft_turn(m, 1);
 	if (m->w->down)
 	{
-		if (!(m->w->map[(int)(m->w->posX - m->w->dirX)][(int)m->w->posY]))
-			m->w->posX -= m->w->dirX * m->w->move_speed;
-		if (!(m->w->map[(int)m->w->posX][(int)(m->w->posY - m->w->dirY)]))
-			m->w->posY -= m->w->dirY * m->w->move_speed;
+		if (!(m->w->map[(int)(m->w->posx - m->w->dirx)][(int)m->w->posy]))
+			m->w->posx -= m->w->dirx * m->w->move_speed;
+		if (!(m->w->map[(int)m->w->posx][(int)(m->w->posy - m->w->diry)]))
+			m->w->posy -= m->w->diry * m->w->move_speed;
 	}
 }
 
