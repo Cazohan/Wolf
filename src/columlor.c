@@ -6,7 +6,7 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/08 19:00:26 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/10/06 10:09:00 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/06 11:11:23 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void		pixel_put(t_mlx *m, int x, int y, t_rgb *c)
 	int		index;
 
 	index = y * m->s_l + x * (m->bpp / 8);
-	if (x < 800 && x > 0 && y < 800 && y > 0)
+	if (x < m->width && x > 0 && y < m->height && y > 0)
 	{
 		m->data[index] = c->b;
 		m->data[index + 1] = c->g;

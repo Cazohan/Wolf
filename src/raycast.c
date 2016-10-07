@@ -6,7 +6,7 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/08 18:32:49 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/10/06 10:15:23 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/06 11:11:55 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,11 +77,11 @@ void		ft_dist(t_mlx *m)
 		m->w->ppwalld = (m->w->mapx - m->w->rayposx + ( 1 - m->w->stepx) / 2) / m->w->raydirx;
 	else
 		m->w->ppwalld = (m->w->mapy - m->w->rayposy + ( 1 - m->w->stepy) / 2) / m->w->raydiry;
-	m->w->lineh = 800 / m->w->ppwalld;
-	m->w->draws = -(m->w->lineh) / 2 + 800 / 2;
+	m->w->lineh = m->height / m->w->ppwalld;
+	m->w->draws = -(m->w->lineh) / 2 + m->height / 2;
 	if (m->w->draws < 0)
 		m->w->draws = 0;
-	m->w->drawe = m->w->lineh / 2 + 800 / 2;
-	if (m->w->drawe >= 800)
-		m->w->drawe = 800 - 1;
+	m->w->drawe = m->w->lineh / 2 + m->height / 2;
+	if (m->w->drawe >= m->height)
+		m->w->drawe = m->height - 1;
 }
