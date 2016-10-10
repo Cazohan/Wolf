@@ -6,7 +6,7 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/09 13:56:09 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/10/06 12:58:22 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/10 14:37:06 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,11 @@ void		ft_init(t_mlx *m, char *av)
 	m->width = 1200;
 	m->height = 800;
 	m->win = mlx_new_window(m->mlx, m->width, m->height, "Wolf");
-//	m->w->posx = 10;
-//	m->w->posy = 10;
+	m->w->wall = 0;
+	m->w->up = 0;
+	m->w->down = 0;
+	m->w->left = 0;
+	m->w->right = 0;
 	m->w->dirx = -1;
 	m->w->diry = 0;
 	m->w->planex = 0;

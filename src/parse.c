@@ -6,7 +6,7 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/24 16:23:45 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/10/10 12:15:44 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/10 14:35:39 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ void		ft_full(t_mlx *m, char *av)
 	while (get_next_line(fd, &line))
 	{
 		m->w->y = 0;
-		printf("%s\n", line);
 		tmp = ft_strsplit(line, ' ');
 		while (tmp[m->w->y] != NULL)
 		{
@@ -82,7 +81,8 @@ void		ft_parse(t_mlx *m, char *av)
 	char	**tmp;
 	int		fd;
 
-	fd = open(av, O_RDONLY);
+	if ((fd = open(av, O_RDONLY)) < 1)
+		ft_error(m, 3);
 	m->w->x = 0;
 	while (get_next_line(fd, &line))
 	{
@@ -93,11 +93,12 @@ void		ft_parse(t_mlx *m, char *av)
 		m->w->x++;
 	}
 	close(fd);
-	DEBUG
 	ft_size(m, m->w->x + 1, m->w->y + 1);
-	DEBUG
 	ft_full(m, av);
-	DEBUG
 	ft_place(m);
-	DEBUG
+	if (ft_wall(m) < 1)
+	{
+		printf("%d", ft_wall(m));
+		ft_error(m, 2);
+	}
 }

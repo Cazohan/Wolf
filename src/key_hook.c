@@ -6,7 +6,7 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/09 16:25:13 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/10/06 10:11:25 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/10 13:28:32 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,11 +71,7 @@ int			ft_k_press(int key, t_mlx *m)
 int			ft_k_release(int key, t_mlx *m)
 {
 	if (key == 53)
-	{
-		mlx_destroy_image(m->mlx, m->img);
-		mlx_destroy_window(m->mlx, m->win);
-		exit(0);
-	}
+		ft_echap(m);
 	else if (key == 13 || key == 126)
 		m->w->up = 0;
 	else if (key == 125 || key == 1)

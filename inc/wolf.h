@@ -6,7 +6,7 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/24 15:20:00 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/10/06 10:24:02 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/10 14:30:27 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,6 +46,7 @@ typedef struct		s_wolf
 	int				down;
 	int				right;
 	int				left;
+	int				wall;
 	double			posx;
 	double			posy;
 	double			dirx;
@@ -84,7 +85,8 @@ typedef struct		s_mlx
 	t_wolf			*w;
 }					t_mlx;
 
-
+void				ft_error(t_mlx *m, int i);
+void				ft_stop(t_mlx *m, int i);
 void				ft_move(t_mlx *m);
 void				ft_init(t_mlx *m, char *av);
 void				ft_parse(t_mlx *m, char *av);
@@ -94,8 +96,10 @@ void				ft_column(t_mlx *m, int x);
 void				ft_step(t_mlx *m);
 void				ft_dda(t_mlx *m);
 void				ft_dist(t_mlx *m);
+int					ft_echap(t_mlx *m);
 int					ft_loop_ray(t_mlx *m);
 int					ft_k_release(int key, t_mlx *m);
 int					ft_k_press(int key, t_mlx *m);
+int					ft_wall(t_mlx *m);
 
 #endif
