@@ -6,7 +6,7 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/24 15:20:00 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/10/10 14:30:27 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/11 13:27:23 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,6 @@ int					ft_echap(t_mlx *m);
 int					ft_loop_ray(t_mlx *m);
 int					ft_k_release(int key, t_mlx *m);
 int					ft_k_press(int key, t_mlx *m);
-int					ft_wall(t_mlx *m);
+void				ft_check_wall(t_mlx *m);
 
 #endif

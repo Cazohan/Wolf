@@ -6,7 +6,7 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/24 16:23:45 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/10/10 14:35:39 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/11 13:43:20 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ void		ft_place(t_mlx *m)
 		}
 		x++;
 	}
+	if (search == 1)
+		ft_error(m, 1);
 }
 
 void		ft_full(t_mlx *m, char *av)
@@ -96,9 +98,5 @@ void		ft_parse(t_mlx *m, char *av)
 	ft_size(m, m->w->x + 1, m->w->y + 1);
 	ft_full(m, av);
 	ft_place(m);
-	if (ft_wall(m) < 1)
-	{
-		printf("%d", ft_wall(m));
-		ft_error(m, 2);
-	}
+	ft_check_wall(m);
 }
