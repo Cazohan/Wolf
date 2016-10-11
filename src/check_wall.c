@@ -6,7 +6,7 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/10 14:10:26 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/10/11 15:09:46 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/11 15:37:59 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,16 +18,18 @@ void		ft_check_wall(t_mlx *m)
 	int		y;
 
 	x = 0;
-	while(x < m->w->x)
+	while (x < m->w->x)
 	{
 		y = 0;
-		while(y <- m->w->y)
+		while (y < m->w->y)
 		{
-			if (m->w->map[0][y] > 0 || m->w->map[m->w->x][y] > 0||
-					m->w->map[x][0] > 0 || m->w->map[x][m->w->y] > 0)
-				y++;
- 			else
-				ft_error(m, 3);
+			if (x == 0 || (x == m->w->x - 1))
+				if (m->w->map[x][y] == 0)
+					ft_error(m, 3);
+			if (y == 0 || (y == m->w->y - 1))
+				if (m->w->map[x][y] == 0)
+					ft_error(m, 3);
+			y++;
 		}
 		x++;
 	}
