@@ -6,7 +6,7 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/08 19:00:26 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/10/06 11:11:23 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/12 14:19:11 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,30 +32,31 @@ void		select_color(t_rgb *c, int r, int g, int b)
 	c->b = b;
 }
 
-void		ft_column(t_mlx *m, int x)
+void		ft_column(t_mlx *m, t_rgb *c, int x)
 {
-	t_rgb	c;
 	int		y;
+	t_rgb	skyfloor;
 
 	y = 0;
-	select_color(&c, 0, 0, 0);
+	select_color(&skyfloor, 0, 0, 0);
 	while (y < m->w->draws)
 	{
-		pixel_put(m, x, y, &c);
+		pixel_put(m, x, y, &skyfloor);
 		y++;
 	}
 	y = m->w->draws;
-	select_color(&c, 250, 0, 0);
+//	select_color(&c, 250, 110, 0);
 	while (y < m->w->drawe)
 	{
-		pixel_put(m, x, y, &c);
+//		printf("%d, %d\n", m->w->stepx, m->w->stepy);
+		pixel_put(m, x, y, c);
 		y++;
 	}
 	y = m->w->drawe;
-	select_color(&c, 175, 175, 175);
+	select_color(&skyfloor, 175, 175, 175);
 	while (y < m->height)
 	{
-		pixel_put(m, x, y, &c);
+		pixel_put(m, x, y, &skyfloor);
 		y++;
 	}
 }

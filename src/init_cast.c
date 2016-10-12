@@ -6,7 +6,7 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/09 13:56:09 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/10/10 14:37:06 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/12 14:15:46 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 int			ft_loop_ray(t_mlx *m)
 {
 	int		x;
+	t_rgb	c;
 
 	if (m->img != NULL)
 		mlx_destroy_image(m->mlx, m->img);
@@ -27,7 +28,8 @@ int			ft_loop_ray(t_mlx *m)
 		ft_step(m);
 		ft_dda(m);
 		ft_dist(m);
-		ft_column(m, x);
+		ft_fixc(m, &c);
+		ft_column(m, &c, x);
 		x++;
 	}
 	get_frame(m);

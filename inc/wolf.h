@@ -6,7 +6,7 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/24 15:20:00 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/10/11 13:27:23 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/12 14:07:46 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,14 +92,17 @@ void				ft_init(t_mlx *m, char *av);
 void				ft_parse(t_mlx *m, char *av);
 void				get_frame(t_mlx *m);
 void				ft_ray_pos(t_mlx *m, int x);
-void				ft_column(t_mlx *m, int x);
+void				ft_column(t_mlx *m, t_rgb *c, int x);
 void				ft_step(t_mlx *m);
 void				ft_dda(t_mlx *m);
 void				ft_dist(t_mlx *m);
+void				ft_fixc(t_mlx *m, t_rgb *c);
 int					ft_echap(t_mlx *m);
 int					ft_loop_ray(t_mlx *m);
 int					ft_k_release(int key, t_mlx *m);
 int					ft_k_press(int key, t_mlx *m);
 void				ft_check_wall(t_mlx *m);
+void				select_color(t_rgb *c, int r, int g, int b);
+void				ft_color_wall(t_mlx *m, t_rgb *c);
 
 #endif
