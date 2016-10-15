@@ -6,7 +6,7 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/09 16:25:13 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/10/10 13:28:32 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/15 12:03:19 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,8 @@ int			ft_k_press(int key, t_mlx *m)
 		m->w->left = 1;
 	else if (key == 124 || key == 2)
 		m->w->right = 1;
+	else if (key == 257)
+		m->w->run = 1;
 	return (0);
 }
 
@@ -80,5 +82,7 @@ int			ft_k_release(int key, t_mlx *m)
 		m->w->left = 0;
 	else if (key == 124 || key == 2)
 		m->w->right = 0;
+	else if (key == 257)
+		m->w->run = 0;
 	return (0);
 }

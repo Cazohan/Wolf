@@ -6,7 +6,7 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/24 15:20:00 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/10/14 11:35:35 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/15 12:12:29 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ typedef struct		s_rgb
 
 typedef struct		s_wolf
 {
+	int				run;
 	int				x;
 	int				y;
 	int				**map;
