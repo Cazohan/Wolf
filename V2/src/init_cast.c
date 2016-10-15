@@ -6,7 +6,7 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/09 13:56:09 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/10/15 12:12:23 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/15 13:02:40 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,15 +38,27 @@ int			ft_loop_ray(t_mlx *m)
 	return (0);
 }
 
-void		ft_init(t_mlx *m)
+int			**ft_alloc(t_mlx *m)
 {
-	m->w = (t_wolf *)ft_memalloc(sizeof(t_wolf));
-	m->mlx = mlx_init();
+	int		i;
+
+	i = 0;
+	m->w->map = (int **)ft_memalloc(sizeof(int *) * m->w->width_m);
+	while (i < m->w->width_m)
+	{
+		m->w->map[i] = (int *)ft_memalloc(sizeof(int *) * m->w->height_m);
+		i++;
+	}
+	return (m->w->map);
+
+}
+
+void		ft_init_env(t_mlx *m)
+{
 	m->width = 1200;
 	m->height = 800;
 	m->w->height_m = 12;
 	m->w->width_m = 12;
-	m->win = mlx_new_window(m->mlx, m->width, m->height, "Wolf");
 	m->w->wall = 0;
 	m->w->up = 0;
 	m->w->down = 0;
@@ -61,7 +73,15 @@ void		ft_init(t_mlx *m)
 	m->img = NULL;
 	m->w->posx = 2.5;
 	m->w->posy = 2.5;
+	m->w->run = 0;
+}
+
+void		ft_init(t_mlx *m)
+{
+	m->w = (t_wolf *)ft_memalloc(sizeof(t_wolf));
+	ft_init_env(m);
+	m->mlx = mlx_init();
+	m->win = mlx_new_window(m->mlx, m->width, m->height, "Wolf");
 	ft_alloc(m);
 	ft_full(m);
-//	ft_parse(m, av);
 }

@@ -6,30 +6,11 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/13 11:47:17 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/10/15 11:14:53 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/15 13:02:37 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/wolf.h"
-
-void		ft_print_map(t_mlx *m)
-{
-	int x;
-	int y;
-
-	y = 0;
-	while (y < m->w->height_m)
-	{
-		x = 0;
-		while(x < m->w->width_m)
-		{
-			ft_putnbr(m->w->map[x][y]);
-			x++;
-		}
-		ft_putchar('\n');
-		y++;
-	}
-}
 
 void		ft_inside_2(t_mlx *m, int x, int y)
 {
@@ -89,7 +70,8 @@ void		ft_around(t_mlx *m)
 		y = 0;
 		while (y < m->w->height_m)
 		{
-			if (x == 0 || y == 0 || x == (m->w->width_m - 1) || y == (m->w->height_m - 1))
+			if (x == 0 || y == 0 || x == (m->w->width_m - 1) ||
+					y == (m->w->height_m - 1))
 				m->w->map[x][y] = 1;
 			y++;
 		}
@@ -107,18 +89,4 @@ void		ft_full(t_mlx *m)
 	ft_around(m);
 	ft_inside_1(m, x, y);
 	ft_inside_2(m, x, y);
-}
-
-int			**ft_alloc(t_mlx *m)
-{
-	int		i;
-
-	i = 0;
-	m->w->map = (int **)ft_memalloc(sizeof(int *) * m->w->width_m);
-	while (i < m->w->width_m)
-	{
-		m->w->map[i] = (int *)ft_memalloc(sizeof(int *) * m->w->height_m);
-		i++;
-	}
-	return (m->w->map);
 }
