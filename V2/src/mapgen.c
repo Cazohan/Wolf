@@ -6,41 +6,12 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/13 11:47:17 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/10/14 11:49:17 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/15 11:14:53 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../inc/wolf.h"
-/*
-void		ft_place(t_mlx *m)
-{
-	int		x;
-	int		y;
-	int		search;
 
-	search = 1;
-	x = 0;
-	while (x < m->w->x && search)
-	{
-		y = 0;
-		while (y < m->w->y && search)
-		{
-			if (m->w->map[x][y] == 0 && m->w->map[x + 1][y]  == 0 &&
-					m->w->map[x - 1][y] == 0 && m->w->map[x][y + 1] == 0 &&
-					m->w->map[x][y - 1] == 0)
-			{
-				m->w->posx = x + 0.5;
-				m->w->posy = y + 0.5;
-				search = 0;
-			}
-			y++;
-		}
-		x++;
-	}
-	if (search == 1)
-		ft_error(m, 1);
-}
-*/
 void		ft_print_map(t_mlx *m)
 {
 	int x;
@@ -136,7 +107,6 @@ void		ft_full(t_mlx *m)
 	ft_around(m);
 	ft_inside_1(m, x, y);
 	ft_inside_2(m, x, y);
-//	ft_print_map(m);
 }
 
 int			**ft_alloc(t_mlx *m)
