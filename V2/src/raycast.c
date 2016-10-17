@@ -6,7 +6,7 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/08 18:32:49 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/10/15 13:03:34 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/17 15:45:56 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@ void		ft_ray_pos(t_mlx *m, int x)
 	m->w->raydiry = m->w->diry + m->w->planey * m->w->camx;
 	m->w->mapx = (int)m->w->rayposx;
 	m->w->mapy = (int)m->w->rayposy;
-	m->w->d_distx = sqrt( 1 + (m->w->raydiry * m->w->raydiry) /
+	m->w->d_distx = sqrt(1 + (m->w->raydiry * m->w->raydiry) /
 			(m->w->raydirx * m->w->raydirx));
-	m->w->d_disty = sqrt( 1 + (m->w->raydirx * m->w->raydirx) /
+	m->w->d_disty = sqrt(1 + (m->w->raydirx * m->w->raydirx) /
 			(m->w->raydiry * m->w->raydiry));
 }
 
@@ -76,10 +76,10 @@ void		ft_dda(t_mlx *m)
 void		ft_dist(t_mlx *m)
 {
 	if (m->w->side == 0)
-		m->w->ppwalld = (m->w->mapx - m->w->rayposx + ( 1 - m->w->stepx) / 2) /
+		m->w->ppwalld = (m->w->mapx - m->w->rayposx + (1 - m->w->stepx) / 2) /
 			m->w->raydirx;
 	else
-		m->w->ppwalld = (m->w->mapy - m->w->rayposy + ( 1 - m->w->stepy) / 2) /
+		m->w->ppwalld = (m->w->mapy - m->w->rayposy + (1 - m->w->stepy) / 2) /
 			m->w->raydiry;
 	m->w->lineh = m->height / m->w->ppwalld;
 	m->w->draws = -(m->w->lineh) / 2 + m->height / 2;

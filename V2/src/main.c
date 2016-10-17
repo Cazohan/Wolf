@@ -6,7 +6,7 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/24 15:18:57 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/10/14 11:37:10 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/17 15:42:20 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,14 +32,12 @@ int			ft_echap(t_mlx *m)
 	mlx_destroy_image(m->mlx, m->img);
 	mlx_destroy_window(m->mlx, m->win);
 	exit(0);
-	return(0);
+	return (0);
 }
 
-
-int			main()
+int			main(void)
 {
 	t_mlx	m;
-
 
 	ft_init(&m);
 	mlx_hook(m.win, 17, 1, ft_echap, &m);

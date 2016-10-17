@@ -6,7 +6,7 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/13 11:47:17 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/10/15 13:02:37 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/17 15:49:24 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ void		ft_inside_2(t_mlx *m, int x, int y)
 	while (x < m->w->width_m)
 	{
 		y = 0;
-		while(y < m->w->height_m)
+		while (y < m->w->height_m)
 		{
 			if ((x == 7 && y == 8) || (x == 7 && y == 9) || (x == 7 && y == 10)
 				|| (x == 8 && y == 8) || (x == 8 && y == 9) || (x == 8 &&
@@ -39,10 +39,11 @@ void		ft_inside_1(t_mlx *m, int x, int y)
 	while (x < m->w->width_m)
 	{
 		y = 0;
-		while(y < m->w->height_m)
+		while (y < m->w->height_m)
 		{
-			if ((x == 2 && y == 5) || (x == 2 && y == 9) || (x == 3 && y == 4)||
-				(x == 3 && y == 7) || (x == 3 && y == 8) || (x == 4 && y == 1))
+			if ((x == 2 && y == 5) || (x == 2 && y == 9) || (x == 3 && y == 4)
+					|| (x == 3 && y == 7) || (x == 3 && y == 8) ||
+						(x == 4 && y == 1))
 				m->w->map[x][y] = 1;
 			else if ((x == 4 && y == 2) || (x == 4 && y == 3) || (x == 4 &&
 				y == 8) || (x == 5 && y == 5) || (x == 5 && y == 6))

@@ -6,7 +6,7 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/09 13:56:09 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/10/15 13:02:40 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/17 15:52:10 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,6 @@ int			**ft_alloc(t_mlx *m)
 		i++;
 	}
 	return (m->w->map);
-
 }
 
 void		ft_init_env(t_mlx *m)

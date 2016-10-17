@@ -6,7 +6,7 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/08/09 16:25:13 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/10/15 12:03:19 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/17 15:52:41 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ static void		ft_turn(t_mlx *m, int dir)
 								+ m->w->planey * cos(coef * m->w->rot_speed);
 }
 
-void		ft_move(t_mlx *m)
+void			ft_move(t_mlx *m)
 {
 	if (m->w->up)
 	{
@@ -55,7 +55,7 @@ void		ft_move(t_mlx *m)
 	}
 }
 
-int			ft_k_press(int key, t_mlx *m)
+int				ft_k_press(int key, t_mlx *m)
 {
 	if (key == 13 || key == 126)
 		m->w->up = 1;
@@ -70,7 +70,7 @@ int			ft_k_press(int key, t_mlx *m)
 	return (0);
 }
 
-int			ft_k_release(int key, t_mlx *m)
+int				ft_k_release(int key, t_mlx *m)
 {
 	if (key == 53)
 		ft_echap(m);

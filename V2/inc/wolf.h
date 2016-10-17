@@ -6,7 +6,7 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/07/24 15:20:00 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/10/15 12:12:29 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/17 15:53:20 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,8 @@
 # include "../libft/libft.h"
 # include "../minilibx/mlx.h"
 # include <fcntl.h>
-# include <stdio.h>
 # include <math.h>
-# include <sys/time.h> // pour la fonction gettimeofday pour get_frame();
-# define DEBUG printf("%d - %s - %s\n", __LINE__, __func__, __FILE__);
+# include <sys/time.h>
 
 typedef struct		s_rgb
 {
