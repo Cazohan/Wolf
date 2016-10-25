@@ -6,7 +6,7 @@
 /*   By: lherbelo <lherbelo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2016/10/10 14:10:26 by lherbelo          #+#    #+#             */
-/*   Updated: 2016/10/17 15:59:23 by lherbelo         ###   ########.fr       */
+/*   Updated: 2016/10/25 11:24:30 by lherbelo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,6 @@ void		ft_fixc(t_mlx *m, t_rgb *c)
 {
 	if (m->w->map[m->w->mapx][m->w->mapy] == 2)
 		select_color(c, 210, 210, 0);
-	else if (m->w->map[m->w->mapx][m->w->mapy] == 3)
-		select_color(c, 250, 0, 0);
-	else if (m->w->map[m->w->mapx][m->w->mapy] == 4)
-		select_color(c, 210, 10, 180);
 	else if (m->w->map[m->w->mapx][m->w->mapy] == 5)
 		select_color(c, 250, 110, 80);
 	else
